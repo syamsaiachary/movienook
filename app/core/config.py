@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -25,11 +26,7 @@ class Settings(BaseSettings):
     # Database Configuration
     DATABASE_URL: str = Field(
         ...,
-        description="PostgreSQL database URL with asyncpg driver"
-    )
-    TEST_DATABASE_URL: str = Field(
-        ...,
-        description="PostgreSQL test database URL with asyncpg driver"
+        description="PostgreSQL database URL"
     )
     
     # CORS Configuration
